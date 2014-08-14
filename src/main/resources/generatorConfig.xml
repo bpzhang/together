@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry location="D:\m2\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar"/>
+    <context id="MySqlTable" targetRuntime="MyBatis3">
+        <!--去掉注释-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/test"
+                        userId="root" password="root"/>
+        <javaModelGenerator targetPackage="com.ice.zbp.model" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="com.ice.zbp.mapping" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ice.zbp.service" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+        <table schema="test" tableName="t_users" domainObjectName="User" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <!--<table schema="test" tableName="t_admins" domainObjectName="Admins" enableCountByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table schema="test" tableName="t_disheses" domainObjectName="Disheses" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table schema="test" tableName="t_orders" domainObjectName="Orders" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+        <table schema="test" tableName="t_notices" domainObjectName="Notices" enableCountByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
+    </context>
+</generatorConfiguration>

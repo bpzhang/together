@@ -1,26 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- configuration file for LogBack (slf4J implementation)
-See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
-<configuration scan="true" scanPeriod="30 seconds">
+<configuration scan="true" scanPeriod="30 seconds" debug="true">
 
-    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
-        <resetJUL>true</resetJUL>
-    </contextListener>
-
-    <!-- To enable JMX Management -->
-    <jmxConfigurator/>
-
-    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
         <encoder>
-            <pattern>%-5level %logger{0} - %msg%n</pattern>
+            <pattern>| [%-5level] [%date{ISO8601}] [%logger] [%thread] [%X{akkaSource}] - %msg %rootException %n
+            </pattern>
         </encoder>
     </appender>
 
-	<!--<logger name="org.hibernate" level="debug"/> -->
-   <!-- Uncomment and add your logger here:
-    <logger name="org.springframework.samples.service.service" level="debug"/> -->
-         
-    <root level="info">
-        <appender-ref ref="console"/>
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>server.log</file>
+
+        <!-- only keep 3 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>server.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>3</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>1MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>| [%-5level] [%date{ISO8601}] [%logger] [%thread] [%X{akkaSource}] - %msg %rootException %n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ROLLING"/>
     </root>
+
 </configuration>
