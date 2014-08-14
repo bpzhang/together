@@ -174,4 +174,7 @@
       user_adress2 = #{userAdress2,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+    <select id="findByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/> from t_users where user_phone = #{userPhone,jdbcType=VARCHAR}
+    </select>
 </mapper>
