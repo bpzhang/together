@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ice.zbp.service.DishesesMapper" >
+<mapper namespace="com.ice.zbp.dao.DishesesMapper" >
   <resultMap id="BaseResultMap" type="com.ice.zbp.model.Disheses" >
     <id column="dishesId" property="dishesid" jdbcType="INTEGER" />
     <result column="dishesname" property="dishesname" jdbcType="VARCHAR" />

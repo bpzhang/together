@@ -18,8 +18,10 @@
         <sqlMapGenerator targetPackage="com.ice.zbp.mapping" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ice.zbp.service" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ice.zbp.dao" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java" implementationPackage="com.ice.zbp.dao.impl">
             <property name="enableSubPackages" value="false"/>
+            <property name="methodNameCalculator" value="extended"/>
+            <!--<property name="exampleMethodVisibility" value="public"/>-->
         </javaClientGenerator>
         <table schema="test" tableName="t_users" domainObjectName="User" enableCountByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.ice.zbp.service.NoticesMapper" >
+<mapper namespace="com.ice.zbp.dao.NoticesMapper" >
   <resultMap id="BaseResultMap" type="com.ice.zbp.model.Notices" >
     <id column="noticeid" property="noticeid" jdbcType="INTEGER" />
     <result column="noticecontent" property="noticecontent" jdbcType="VARCHAR" />
