@@ -14,5 +14,10 @@
     </context:component-scan>
     <mvc:annotation-driven/>
     <bean id="conversion-service" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"/>
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="104857600"/>
+        <property name="maxInMemorySize" value="4096"/>
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
 </beans>
