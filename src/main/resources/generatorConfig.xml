@@ -15,7 +15,7 @@
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
-        <sqlMapGenerator targetPackage="com.ice.zbp.mapping" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
+        <sqlMapGenerator targetPackage="mapping" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.ice.zbp.dao" targetProject="E:\\workspace\\workspace_idea\\together\\src\\main\\java" implementationPackage="com.ice.zbp.dao.impl">
