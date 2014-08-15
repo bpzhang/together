@@ -1,9 +1,9 @@
 package com.ice.zbp.service;
 
-import com.ice.zbp.dao.UserMapper;
 import com.ice.zbp.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,11 +14,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = "classpath:application-configTest.xml")
 public class UserTest {
 
-     private  UserMapper userMapper;
+     @Autowired
+	 private UserService userService;
 
 	@Test
 	public void findbyphone() {
-		User user = userMapper.findByPhone("18612991451");
+		User user = userService.findbyPhone("18612991451");
          System.out.println(user.getUserName());
 	}
 }
